@@ -24,15 +24,17 @@
             display: flex;
             flex-wrap: wrap;
         }
-        .content {
-            flex: 1 1 70%;
-            padding: 20px;
-        }
         .sidebar {
             flex: 1 1 30%;
             padding: 20px;
             background-color: #f9f9f9;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            order: 2; /* Move sidebar to the right */
+        }
+        .content {
+            flex: 1 1 70%;
+            padding: 20px;
+            order: 1; /* Content comes before the sidebar */
         }
         .sidebar h3 {
             font-size: 20px;
@@ -92,6 +94,7 @@
             }
             .content, .sidebar {
                 flex: 1 1 100%;
+                order: unset; /* Reset order for smaller screens */
             }
             header {
                 text-align: center;
@@ -126,7 +129,7 @@
                 </div>
                 <hr>
                 <section>
-                    <h1>Humour in photography</h1>
+                    <h1>Humour in Photography</h1>
                     <p>Humour in photography can be a powerful tool to engage viewers and convey messages in a light-hearted manner. Here are some tips to incorporate humour into your photography:</p>
                     <div class="toggle-container">
                         <a href="humour-photography.html" class="toggle-link">Continue Reading</a>
@@ -138,14 +141,6 @@
                     <p>Garden photography can be a delightful way to capture the beauty of nature. Here are some tips to enhance your garden photography:</p>
                     <div class="toggle-container">
                         <a href="garden-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>Nude Photography</h1>
-                    <p>Capturing the nude body in photography is capturing what is beautifull and what is sensual.</p>
-                    <div class="toggle-container">
-                        <a href="nude-photography.html" class="toggle-link">Continue Reading</a>
                     </div>
                 </section>
                 <hr>
@@ -182,7 +177,7 @@
                 </section>
                 <hr>
                 <section>
-                    <h1>Taking your camera on Vacation</h1>
+                    <h1>Taking Your Camera on Vacation</h1>
                     <p>Taking your camera on vacation can help you capture memories and experiences. Here are some tips to make the most of your vacation photography:</p>
                     <div class="toggle-container">
                         <a href="vacation-photography.html" class="toggle-link">Continue Reading</a>
@@ -196,26 +191,18 @@
                         <a href="digital-camera-tips.html" class="toggle-link">Continue Reading</a>
                     </div>
                 </section>
-                <hr>
-                <section>
-                    <h2>10. Low Key Lighting</h2>
-                    <p>Low key lighting is a technique that creates a dramatic effect by using minimal light. Here are some tips to achieve low key lighting in your photography:</p>
-                </section>
             </main>
         </div>
         <aside class="sidebar">
             <h3>Search</h3>
             <input type="text" placeholder="Search...">
-            <h3>Recent Comments</h3>
             <h3>Recent Posts</h3>
             <ul>
-                <li><a href="lighting-photography.html">lighting photography Tips</a></li>
-                <li><a href="humour-photography.html">Humor In Photography</a></li>
-                <li><a href="garden-photography.html">Garden Photography</a></li>
-                <li><a href="nude-photography.html">Nude Photography Tips</a></li>
+                <li><a href="lighting-photography.html">Lighting Photography Tips</a></li>
+                <li><a href="humour-photography.html">Humour in Photography</a></li>
+                <li><a href="garden-photography.html">Garden Photography Tips</a></li>
                 <li><a href="night-photography.html">Night Photography Tips</a></li>
             </ul>
-            <h3>Blogs</h3>
             <h3>Archives</h3>
             <ul>
                 <li><a href="#">April 2013</a></li>
