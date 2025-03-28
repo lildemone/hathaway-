@@ -5,40 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hathaway</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            text-align: left;
+            padding: 50px;
+            background-color: #4a4a4a;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
         .container {
             display: flex;
+            flex-wrap: wrap;
         }
         .content {
-            width: 75%;
+            flex: 1 1 70%;
             padding: 20px;
         }
         .sidebar {
-            width: 25%;
+            flex: 1 1 30%;
             padding: 20px;
-            background-color: #f4f4f4;
-            order: 2; /* Move sidebar to the right */
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .sidebar h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #4a4a4a;
         }
         .sidebar input[type="text"] {
             width: 100%;
-            padding: 5px;
-            margin-bottom: 15px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .toggle-content {
-            display: none;
-            margin-top: 10px;
-        }
-        .toggle-button {
-            cursor: pointer;
-            color: blue;
-            text-decoration: underline;
-            background: none;
-            border: none;
-            font-size: 14px;
+        .sidebar ul {
+            list-style: none;
             padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        main h1 {
+            font-size: 28px;
+            color: #4a4a4a;
+        }
+        main section {
+            margin-bottom: 30px;
         }
         .toggle-container {
             margin-top: 10px;
@@ -46,9 +73,30 @@
         .toggle-link {
             display: inline-block;
             margin-top: 5px;
-            color: blue;
+            color: #007BFF;
             text-decoration: underline;
-            font-size: 14px;
+            font-size: 16px;
+        }
+        .toggle-link:hover {
+            color: #0056b3;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .content, .sidebar {
+                flex: 1 1 100%;
+            }
+            header {
+                text-align: center;
+                font-size: 40px;
+            }
         }
     </style>
     <script>
@@ -65,12 +113,12 @@
     </script>
 </head>
 <body>
-    <header style="text-align: left; padding: 50px; background-color: #868484; font-size: 50px; font-weight: bold;">
+    <header>
         Hathaway
     </header>
     <div class="container">
         <div class="content">
-            <main style="text-align: left; padding: 50px; font-size: 15px; font-weight: bold;">
+            <main>
                 <h1>Lighting Photography Tips</h1>
                 <p>Lighting is a crucial element in photography that can make or break your images. Here are some tips to help you master lighting in your photography:</p>
                 <div class="toggle-container">
@@ -161,26 +209,26 @@
             <h3>Recent Comments</h3>
             <h3>Recent Posts</h3>
             <ul>
-                <li>lighting photography Tips</li>
-                <li>Humor In Photography</li>
-                <li>Garden Photography</li>
-                <li>Nude Photography Tips</li>
-                <li>Night Photography Tips</li>
+                <li><a href="lighting-photography.html">lighting photography Tips</a></li>
+                <li><a href="humour-photography.html">Humor In Photography</a></li>
+                <li><a href="garden-photography.html">Garden Photography</a></li>
+                <li><a href="nude-photography.html">Nude Photography Tips</a></li>
+                <li><a href="night-photography.html">Night Photography Tips</a></li>
             </ul>
             <h3>Blogs</h3>
             <h3>Archives</h3>
             <ul>
-                <li>April 2013</li>
-                <li>November 2021</li>
-                <li>October 2021</li>
-                <li>September 2012</li>
+                <li><a href="#">April 2013</a></li>
+                <li><a href="#">November 2021</a></li>
+                <li><a href="#">October 2021</a></li>
+                <li><a href="#">September 2012</a></li>
             </ul>
             <h3>Meta</h3>
             <ul>
-                <li>Login</li>
-                <li>Entries feed</li>
-                <li>Comment feed</li>
-                <li>WordPress.org</li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Entries feed</a></li>
+                <li><a href="#">Comment feed</a></li>
+                <li><a href="#">WordPress.org</a></li>
             </ul>
         </aside>
     </div>
