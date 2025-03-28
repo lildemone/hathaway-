@@ -3,88 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Photography Tips</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8z4+2e5c7e5a5e5a5e5a5e5a5e5a5e5a5e5" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8z4+2e5c7e5a5e5a5e5a5e5a5e5a5e5" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <title>Hathaway</title>
     <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
         .container {
-            max-width: 800px;
-            margin: auto;
+            display: flex;
+        }
+        .content {
+            width: 75%;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            width: 25%;
+            padding: 20px;
+            background-color: #f4f4f4;
+            order: 2; /* Move sidebar to the right */
+        }
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .sidebar input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+        .toggle-content {
+            display: none;
+            margin-top: 10px;
+        }
+        .toggle-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            font-size: 14px;
+            padding: 0;
+        }
+        .toggle-container {
+            margin-top: 10px;
+        }
+        .toggle-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: blue;
+            text-decoration: underline;
+            font-size: 14px;
         }
     </style>
+    <script>
+        function toggleContent(button) {
+            const content = button.nextElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Show Less";
+            } else {
+                content.style.display = "none";
+                button.textContent = "Continue Reading";
+            }
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div class="header_resize">
-                <div class="logo">
-                    <h1><a href="#" title="Photography tips">Photography Tips</a></h1>
-                </div>
-                <div id="nav_wrapper">
-                    <ul class="menu">
-                        <!-- Navigation items can be added here -->
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <header style="text-align: left; padding: 50px; background-color: #868484; font-size: 50px; font-weight: bold;">
+        Hathaway
     </header>
-    <main>
+    <div class="container">
         <div class="content">
-            <div id="columns" class="content_resize">
-                <div id="centercol" class="mainbar">
-                    <div class="infoblock" id="post-19">
-                        <h2><a href="#">Nude Photography Tips</a></h2>
-                        <div class="post-excerpt">
-                            <p>Capturing the nude body in photography is capturing what is beautiful and what is sensual. However, since beauty is sometimes elusive and can only be seen by trained eyes, it can be very difficult to take a stunning photo of a nude body. It requires patience and skills.</p>
-                            <p><a href="#" title="Continue reading...">Continue Reading...</a></p>
-                        </div>
-                    </div>
-                    <!-- Additional posts can be added here -->
+            <main style="text-align: left; padding: 50px; font-size: 15px; font-weight: bold;">
+                <h1>Lighting Photography Tips</h1>
+                <p>Lighting is a crucial element in photography that can make or break your images. Here are some tips to help you master lighting in your photography:</p>
+                <div class="toggle-container">
+                    <a href="lighting-photography.html" class="toggle-link">Continue Reading</a>
                 </div>
-
-                <div class="sidebar" id="rightcol">
-                    <div class="box widget widget_search">
-                        <form method="get" id="searchform" action="#">
-                            <input type="text" value="Search..." onclick="this.value='';" name="s" id="s" class="keywords" />
-                            <input name="searchsubmit" type="submit" value="Go" class="btn" />
-                        </form>
+                <hr>
+                <section>
+                    <h1>Humour in photography</h1>
+                    <p>Humour in photography can be a powerful tool to engage viewers and convey messages in a light-hearted manner. Here are some tips to incorporate humour into your photography:</p>
+                    <div class="toggle-container">
+                        <a href="humour-photography.html" class="toggle-link">Continue Reading</a>
                     </div>
-                    <div class="box widget widget_recent_entries">
-                        <h2>Recent Posts</h2>
-                        <ul>
-                            <li><a href="#">Lightning Photography Tips</a></li>
-                            <li><a href="#">Humor in Photography</a></li>
-                            <li><a href="#">Garden Photography Tips</a></li>
-                        </ul>
+                </section>
+                <hr>
+                <section>
+                    <h1>Garden Photography Tips</h1>
+                    <p>Garden photography can be a delightful way to capture the beauty of nature. Here are some tips to enhance your garden photography:</p>
+                    <div class="toggle-container">
+                        <a href="garden-photography.html" class="toggle-link">Continue Reading</a>
                     </div>
-                </div>
-            </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Nude Photography</h1>
+                    <p>Capturing the nude body in photography is capturing what is beautifull and what is sensual.</p>
+                    <div class="toggle-container">
+                        <a href="nude-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Night Photography Tips</h1>
+                    <p>Night photography can be challenging but rewarding. Here are some tips to help you capture stunning night shots:</p>
+                    <div class="toggle-container">
+                        <a href="night-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Shooting Water Sports</h1>
+                    <p>Shooting water sports can be exhilarating and challenging. Here are some tips to help you capture the action:</p>
+                    <div class="toggle-container">
+                        <a href="water-sports-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Self-Portrait Photography Tips</h1>
+                    <p>Self-portrait photography can be a fun and creative way to express yourself. Here are some tips to help you take great self-portraits:</p>
+                    <div class="toggle-container">
+                        <a href="self-portrait-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Fashion Photography Tips</h1>
+                    <p>Fashion photography is all about capturing the essence of style and beauty. Here are some tips to help you excel in fashion photography:</p>
+                    <div class="toggle-container">
+                        <a href="fashion-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Taking your camera on Vacation</h1>
+                    <p>Taking your camera on vacation can help you capture memories and experiences. Here are some tips to make the most of your vacation photography:</p>
+                    <div class="toggle-container">
+                        <a href="vacation-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>How to Improve Your Digital Camera Shots</h1>
+                    <p>Improving your digital camera shots can be achieved through practice and understanding your camera's settings. Here are some tips to help you improve:</p>
+                    <div class="toggle-container">
+                        <a href="digital-camera-tips.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h2>10. Low Key Lighting</h2>
+                    <p>Low key lighting is a technique that creates a dramatic effect by using minimal light. Here are some tips to achieve low key lighting in your photography:</p>
+                </section>
+            </main>
         </div>
-    </main>
-    <footer>
-        <div class="footer">
-            <div class="footer_resize">
-                <p>&copy; Copyright 2025. All Rights Reserved</p>
-                <p>Design: <a href="#">WordPress Themes</a></p>
-            </div>
-        </div>
-    </footer>
+        <aside class="sidebar">
+            <h3>Search</h3>
+            <input type="text" placeholder="Search...">
+            <h3>Recent Comments</h3>
+            <h3>Recent Posts</h3>
+            <ul>
+                <li>lighting photography Tips</li>
+                <li>Humor In Photography</li>
+                <li>Garden Photography</li>
+                <li>Nude Photography Tips</li>
+                <li>Night Photography Tips</li>
+            </ul>
+            <h3>Blogs</h3>
+            <h3>Archives</h3>
+            <ul>
+                <li>April 2013</li>
+                <li>November 2021</li>
+                <li>October 2021</li>
+                <li>September 2012</li>
+            </ul>
+            <h3>Meta</h3>
+            <ul>
+                <li>Login</li>
+                <li>Entries feed</li>
+                <li>Comment feed</li>
+                <li>WordPress.org</li>
+            </ul>
+        </aside>
+    </div>
 </body>
 </html>
