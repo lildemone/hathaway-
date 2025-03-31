@@ -22,19 +22,16 @@
         }
         .container {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column; /* Stack sidebar and content vertically */
+            gap: 20px; /* Add spacing between the sidebar and content */
         }
         .sidebar {
-            flex: 1 1 30%;
             padding: 20px;
             background-color: #f9f9f9;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            order: 2; /* Move sidebar to the right */
         }
         .content {
-            flex: 1 1 70%;
             padding: 20px;
-            order: 1; /* Content comes before the sidebar */
         }
         .sidebar h3 {
             font-size: 20px;
@@ -91,14 +88,28 @@
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
+                gap: 0; /* Remove spacing for smaller screens */
             }
             .content, .sidebar {
                 flex: 1 1 100%;
-                order: unset; /* Reset order for smaller screens */
+                margin-left: 0; /* Reset margin for smaller screens */
+                margin-top: 0; /* Reset margin for smaller screens */
             }
             header {
                 text-align: center;
                 font-size: 40px;
+            }
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Align sidebar and content horizontally for larger screens */
+                gap: 20px;
+            }
+            .sidebar {
+                flex: 0 0 300px; /* Fixed width for the sidebar */
+            }
+            .content {
+                flex: 1 1 auto;
             }
         }
         .image-container {
@@ -135,79 +146,6 @@
         <img src="R.jpg" alt="Featured Image">
     </div>
     <div class="container">
-        <div class="content">
-            <main>
-                <h1>Lighting Photography Tips</h1>
-                <p>Lighting is a crucial element in photography that can make or break your images. Here are some tips to help you master lighting in your photography:</p>
-                <div class="toggle-container">
-                    <a href="lighting-photography.html" class="toggle-link">Continue Reading</a>
-                </div>
-                <hr>
-                <section>
-                    <h1>Humour in Photography</h1>
-                    <p>Humour in photography can be a powerful tool to engage viewers and convey messages in a light-hearted manner. Here are some tips to incorporate humour into your photography:</p>
-                    <div class="toggle-container">
-                        <a href="humour-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>Garden Photography Tips</h1>
-                    <p>Garden photography can be a delightful way to capture the beauty of nature. Here are some tips to enhance your garden photography:</p>
-                    <div class="toggle-container">
-                        <a href="garden-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>Night Photography Tips</h1>
-                    <p>Night photography can be challenging but rewarding. Here are some tips to help you capture stunning night shots:</p>
-                    <div class="toggle-container">
-                        <a href="night-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>Shooting Water Sports</h1>
-                    <p>Shooting water sports can be exhilarating and challenging. Here are some tips to help you capture the action:</p>
-                    <div class="toggle-container">
-                        <a href="water-sports-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>Self-Portrait Photography Tips</h1>
-                    <p>Self-portrait photography can be a fun and creative way to express yourself. Here are some tips to help you take great self-portraits:</p>
-                    <div class="toggle-container">
-                        <a href="self-portrait-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>Fashion Photography Tips</h1>
-                    <p>Fashion photography is all about capturing the essence of style and beauty. Here are some tips to help you excel in fashion photography:</p>
-                    <div class="toggle-container">
-                        <a href="fashion-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>Taking Your Camera on Vacation</h1>
-                    <p>Taking your camera on vacation can help you capture memories and experiences. Here are some tips to make the most of your vacation photography:</p>
-                    <div class="toggle-container">
-                        <a href="vacation-photography.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-                <hr>
-                <section>
-                    <h1>How to Improve Your Digital Camera Shots</h1>
-                    <p>Improving your digital camera shots can be achieved through practice and understanding your camera's settings. Here are some tips to help you improve:</p>
-                    <div class="toggle-container">
-                        <a href="digital-camera-tips.html" class="toggle-link">Continue Reading</a>
-                    </div>
-                </section>
-            </main>
-        </div>
         <aside class="sidebar">
             <h3>Search</h3>
             <input type="text" placeholder="Search...">
@@ -233,6 +171,88 @@
                 <li><a href="#">WordPress.org</a></li>
             </ul>
         </aside>
+        <div class="content">
+            <main>
+                <h1>Lighting Photography Tips</h1>
+                <p>Lighting is a crucial element in photography that can make or break your images.
+                     Here are some tips to help you master lighting in your photography:</p>
+                <div class="toggle-container">
+                    <a href="lighting-photography.html" class="toggle-link">Continue Reading</a>
+                </div>
+                <hr>
+                <section>
+                    <h1>Humour in Photography</h1>
+                    <p>Humour in photography can be a powerful tool to engage viewers and convey messages 
+                        in a light-hearted manner. Here are some tips to incorporate humour into your photography:</p>
+                    <div class="toggle-container">
+                        <a href="humour-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Garden Photography Tips</h1>
+                    <p>Garden photography can be a delightful way to capture the beauty of nature.
+                         Here are some tips to enhance your garden photography:</p>
+                    <div class="toggle-container">
+                        <a href="garden-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Night Photography Tips</h1>
+                    <p>Night photography can be challenging but rewarding. 
+                        Here are some tips to help you capture stunning night shots:</p>
+                    <div class="toggle-container">
+                        <a href="night-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Shooting Water Sports</h1>
+                    <p>Shooting water sports can be exhilarating and challenging.
+                         Here are some tips to help you capture the action:</p>
+                    <div class="toggle-container">
+                        <a href="water-sports-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Self-Portrait Photography Tips</h1>
+                    <p>Self-portrait photography can be a fun and creative way to express yourself.
+                         Here are some tips to help you take great self-portraits:</p>
+                    <div class="toggle-container">
+                        <a href="self-portrait-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Fashion Photography Tips</h1>
+                    <p>Fashion photography is all about capturing the essence of style and beauty. 
+                        Here are some tips to help you excel in fashion photography:</p>
+                    <div class="toggle-container">
+                        <a href="fashion-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>Taking Your Camera on Vacation</h1>
+                    <p>Taking your camera on vacation can help you capture memories and experiences.
+                         Here are some tips to make the most of your vacation photography:</p>
+                    <div class="toggle-container">
+                        <a href="vacation-photography.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h1>How to Improve Your Digital Camera Shots</h1>
+                    <p>Improving your digital camera shots can be achieved through practice and 
+                        understanding your camera's settings. Here are some tips to help you improve:</p>
+                    <div class="toggle-container">
+                        <a href="digital-camera-tips.html" class="toggle-link">Continue Reading</a>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
 </body>
 </html>
