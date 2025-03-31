@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lighting Photography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            text-align: left;
+            padding: 50px;
+            background-color: #4a4a4a;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-direction: row; /* Arrange content, sidebar, and image container horizontally */
+            gap: 20px; /* Add spacing between elements */
+        }
+        .sidebar {
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .image-container {
+            width: 400px; /* Significantly increased width */
+            height: 400px; /* Significantly increased height */
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+            cursor: pointer; /* Indicate that the container is clickable */
+        }
+        .image-container:hover {
+            transform: scale(1.1); /* Slightly enlarge the container on hover */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+        }
+        .image-container.enlarged {
+            width: 100vw; /* Cover the full screen width */
+            height: 100vh; /* Cover the full screen height */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow when enlarged */
+            position: fixed; /* Fix the image in place */
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+            z-index: 1000; /* Ensure it appears above all other elements */
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        lighting Photography
+
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Lighting Photography</h2>
+            <p>Lighting photography is a specialized field that focuses on the use of light to create stunning images.
+            It involves understanding how different lighting conditions affect the mood, tone, and overall
+            composition of a photograph.
+            Photographers often experiment with natural and artificial light sources to achieve the desired effect.
+            Mastering lighting techniques can significantly enhance the quality of photographs, making them more 
+            dynamic and visually appealing. Whether it's the soft glow of golden hour or the dramatic shadows 
+            created by studio lighting, understanding and manipulating light is key to capturing breathtaking images.
+            Photographers use various tools such as reflectors, diffusers, and light meters to control and measure light. 
+            Reflectors help bounce light onto the subject, reducing harsh shadows, while diffusers soften the light for a more even distribution. 
+            Light meters assist in determining the correct exposure settings for a given scene. 
+            Additionally, understanding the color temperature of light is crucial, as it affects the warmth or coolness of the image. 
+            By combining these techniques and tools, photographers can create compelling visuals that tell a story and evoke emotions.
+            <h3>Precautions in Lighting Photography</h3>
+            <ul>
+                <li>Always ensure proper handling of electrical equipment to avoid accidents or damage.</li>
+                <li>Be cautious when using high-intensity lights to prevent overheating or burns.</li>
+                <li>Use protective gear, such as gloves or goggles, when working with specialized lighting setups.</li>
+                <li>Avoid pointing strong lights directly into the subject's eyes to prevent discomfort or injury.</li>
+                <li>Ensure that light stands and equipment are securely positioned to prevent tipping or falling.</li>
+                <li>Be mindful of the environment and avoid causing disturbances, especially when shooting outdoors.</li>
+                <li>Regularly inspect and maintain lighting equipment to ensure it is in good working condition.</li>
+            </ul>
+            <p>By following these precautions, photographers can ensure a safe and successful lighting photography experience.</p>
+        </div>
+        <div class="sidebar"></div>
+        <div class="image-container">
+            <img src="lighting-photo.jpg" alt="Lighting Photography Example">
+        </div>
+    </div>
+    <h3>Essential Equipment</h3>
+    <ul>
+        <li>Camera with manual settings</li>
+        <li>Tripod for stability</li>
+        <li>External flash</li>
+        <li>Reflectors and diffusers</li>
+        <li>Light meters</li>
+        <li>Softboxes and umbrellas</li>
+        <li>Continuous or strobe lights</li>
+        <li>Color gels for creative effects</li>
+    </ul>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const imageContainer = document.querySelector(".image-container");
+            imageContainer.addEventListener("click", () => {
+                imageContainer.classList.toggle("enlarged"); // Toggle the enlarged class
+            });
+        });
+    </script>
+</body>
+</html>
