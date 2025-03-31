@@ -45,9 +45,14 @@
             cursor: pointer; /* Indicate that the container is clickable */
         }
         .image-container.enlarged {
-            width: 50vw; /* Cover half the screen width */
-            height: 50vh; /* Cover half the screen height */
+            width: 100vw; /* Cover the full screen width */
+            height: 100vh; /* Cover the full screen height */
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow when enlarged */
+            position: fixed; /* Fix the image in place */
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+            z-index: 1000; /* Ensure it appears above all other elements */
         }
         .image-container img {
             max-width: 100%;
@@ -96,7 +101,7 @@ You may have achieved an excellent humorous photo if it seems an ordinary joke a
             </p>
         </div>
         <div class="image-container">
-            <img src="humour-photo.jpg" alt="Humour Photography Example">
+            <img src="humour image copy.jpg" alt="Humour Photography Example">
         </div>
     </div>
     <script>
