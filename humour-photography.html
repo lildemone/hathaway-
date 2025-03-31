@@ -22,8 +22,8 @@
         }
         .container {
             display: flex;
-            flex-direction: column; /* Stack sidebar and content vertically */
-            gap: 20px; /* Add spacing between the sidebar and content */
+            flex-direction: row; /* Arrange image container and content horizontally */
+            gap: 20px; /* Add spacing between elements */
         }
         .sidebar {
             padding: 20px;
@@ -33,22 +33,79 @@
         .content {
             padding: 20px;
         }
-        </style>
+        .image-container {
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Indicate that the container is clickable */
+        }
+        .image-container.enlarged {
+            width: 50vw; /* Cover half the screen width */
+            height: 50vh; /* Cover half the screen height */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow when enlarged */
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
         Humor Photography
     </header>
+    <div class="container">
         <div class="content">
             <h2>Humour Photography</h2>
             <p>
-                Humour photography is a genre that captures funny, amusing, or light-hearted moments. It often involves clever compositions, unexpected juxtapositions, and a playful approach to subjects.
-                 This type of photography can include candid shots of people in humorous situations, staged setups with props, or even animals caught in funny poses. The goal is to evoke laughter and joy through visual storytelling.
+                Humour photography is a genre that captures funny, amusing, or light-hearted moments. It often involves clever compositions, unexpected juxtapositions,
+                 and a playful approach to subjects.
+                 This type of photography can include candid shots of people in humorous situations, staged setups with props, or even animals caught in funny poses.
+                  The goal is to evoke laughter and joy through visual storytelling.
                   Whether it's a well-timed snapshot or a carefully planned scene, humour photography brings a smile to the viewer's face and showcases the lighter side of life.
-                  
+                Here are some tips for capturing humour in photography:
+                <ul>
+                    <li><strong>Timing is Key:</strong> Be ready to capture the moment as it happens. A split second can make all the difference in a funny photo.</li>
+                    <li><strong>Use Props:</strong> Incorporate props to create amusing scenarios or add a playful element to your shots.</li>
+                    <li><strong>Experiment with Angles:</strong> Try shooting from unusual perspectives to create a humorous effect.</li>
+                    <li><strong>Focus on Expressions:</strong> People's facial expressions can be a great source of humor, especially in candid moments.</li>
+                    <li><strong>Look for Juxtapositions:</strong> Capture unexpected combinations or contrasts in your frame to create visual comedy.</li>
+                    <li><strong>Be Observant:</strong> Keep an eye out for funny situations in everyday life. Sometimes the best humor is unplanned.</li>
+                </ul>
+                Remember, the goal of humour photography is to bring joy and laughter, so have fun with it and let your creativity shine!
+                When capturing humorous photos, what you have to do is to observe the world and see what others don’t see. This is one of the rules of thumb in photography that many fail to follow.
+                 Look at your subject, try to understand what it is, and then begin looking at what else the subject is. In other words, look, see, and see beyond the subject.
+                  This is one of the skills that sets apart a humorist and good photographer from others.
+
+Finding humor can be matter of luck. Sometimes, humorous situations arise when you least expect them. 
+For example, a child making funny faces, an elephant suddenly appearing in the middle of a busy street, or a sign saying, Illegally parked cars will be towed,
+ crushed, and melted. So have your camera ready at all times. Look for visual non-sequitors, contrasts, or moments that make you go, huh?
+
+If you decide to stage a humorous scenario, the first thing you should do is to look for a subject that can tickle the fancy of those who are going to see the photos.
+ Setting up your own hilarious situation can give you a lot of laughs while doing it, or even more laughter later when everyone gets to look at the photos.
+  Just enjoy and do not force yourself to come up with a funny scenario.
+
+You may have achieved an excellent humorous photo if it seems an ordinary joke at first,
+ but the effect to the viewer remains for a long time.
+
             </p>
         </div>
+        <div class="image-container">
+            <img src="humour-photo.jpg" alt="Humour Photography Example">
+        </div>
     </div>
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const imageContainer = document.querySelector(".image-container");
+            imageContainer.addEventListener("click", () => {
+                imageContainer.classList.toggle("enlarged"); // Toggle the enlarged class
+            });
+        });
+    </script>
 </body>
 </html>
